@@ -1,4 +1,4 @@
-import { StyleSheet, TextInput, TouchableOpacity, Alert } from 'react-native';
+import { StyleSheet, TextInput, TouchableOpacity, Alert, Image } from 'react-native';
 import React, { useState } from 'react';
 
 import { ThemedText } from '@/components/ThemedText';
@@ -12,8 +12,12 @@ export default function NutritionScreen() {
   const [newItemText, setNewItemText] = useState('');
   const [selectedMealTitle, setSelectedMealTitle] = useState('');
 
+  // Imagen para el encabezado
+  const headerImage = <Image source={require('@/assets/headerImage.jpg')} style={{ width: '100%', height: 250 }} />;
+
   return (
     <ParallaxScrollView
+      headerImage={headerImage}  // Pasamos la imagen al componente ParallaxScrollView
       headerBackgroundColor={{ light: '#B9E8C6', dark: '#2A4D33' }}
       headerTitle="Nutrición">
       <ThemedView style={styles.container}>
@@ -168,5 +172,18 @@ const styles = StyleSheet.create({
   recommendationText: {
     fontSize: 14,
     opacity: 0.8,
+  },
+  // Nuevos estilos para los botones
+  addItemButton: {
+    padding: 8,
+  },
+  deleteButton: {
+    padding: 8,
+  },
+  categoryHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 12,
   },
 });

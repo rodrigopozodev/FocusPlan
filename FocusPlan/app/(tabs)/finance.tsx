@@ -36,7 +36,7 @@ export default function FinanceScreen() {
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#B9D3E8', dark: '#27394D' }}
-      headerTitle="Finanzas">
+      headerImage={<ThemedText style={styles.headerTitle}>Finanzas</ThemedText>}>
       <ThemedView style={styles.container}>
         <ThemedText type="title">Finanzas</ThemedText>
         <ThemedText>Registro de ingresos y gastos</ThemedText>
@@ -125,6 +125,23 @@ export default function FinanceScreen() {
 }
 
 const styles = StyleSheet.create({
+    transactionActions: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+      },
+      deleteButton: {
+        marginLeft: 10,
+        padding: 4,
+      },
+
+  headerTitle: {
+    fontSize: 28,
+    fontWeight: 'bold',
+    color: 'white',
+    textAlign: 'center',
+    marginTop: 100,
+  },
   container: {
     flex: 1,
     padding: 16,

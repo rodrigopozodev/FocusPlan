@@ -52,7 +52,7 @@ export default function CalendarScreen() {
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerTitle="Calendario">
+      headerImage={<ThemedText style={styles.headerTitle}>Calendario</ThemedText>}>
       <ThemedView style={styles.container}>
         <ThemedText type="title">Calendario</ThemedText>
         <ThemedText>Planificación por bloques horarios</ThemedText>
@@ -208,6 +208,12 @@ export default function CalendarScreen() {
 }
 
 const styles = StyleSheet.create({
+  headerTitle: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#fff',
+    textAlign: 'center',
+  },
   calendarHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',

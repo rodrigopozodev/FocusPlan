@@ -20,7 +20,7 @@ export default function WorkoutScreen() {
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#C9B9E8', dark: '#3B274D' }}
-      headerTitle="Entrenamiento">
+      headerImage={<ThemedText style={styles.headerTitle}>Entrenamiento</ThemedText>}>
       <ThemedView style={styles.container}>
         <ThemedText type="title">Entrenamiento</ThemedText>
         <ThemedText>Registro de ejercicios y marcas personales</ThemedText>
@@ -167,6 +167,14 @@ export default function WorkoutScreen() {
 }
 
 const styles = StyleSheet.create({
+    headerTitle: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        color: '#fff',
+        textAlign: 'center',
+      },
+      
+
   headerContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',

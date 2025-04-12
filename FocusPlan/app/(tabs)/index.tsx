@@ -1,4 +1,4 @@
-import { StyleSheet, TouchableOpacity } from 'react-native';
+import { StyleSheet, TouchableOpacity, Image } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { router } from 'expo-router';
 
@@ -9,7 +9,6 @@ import { useAppContext } from '@/context/AppContext';
 import { IconSymbol } from '@/components/ui/IconSymbol';
 
 export default function DashboardScreen() {
-  // Usar el contexto para obtener los datos dinámicos
   const { 
     events, 
     goalsList, 
@@ -46,8 +45,12 @@ export default function DashboardScreen() {
   // Obtener una frase motivacional aleatoria
   const motivationalQuote = getRandomQuote();
   
+  // Define una imagen para el encabezado
+  const headerImage = <Image source={require('@/assets/headerImage.jpg')} style={{ width: '100%', height: 250 }} />;
+  
   return (
     <ParallaxScrollView
+      headerImage={headerImage}  // Pasamos la imagen al componente ParallaxScrollView
       headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
       headerTitle="Dashboard">
       <ThemedView style={styles.container}>

@@ -1,4 +1,5 @@
 import type { PropsWithChildren, ReactElement } from 'react';
+import { ThemedText } from '@/components/ThemedText';  // Asegúrate de que esta ruta sea correcta.
 import { StyleSheet } from 'react-native';
 import Animated, {
   interpolate,
@@ -16,12 +17,14 @@ const HEADER_HEIGHT = 250;
 type Props = PropsWithChildren<{
   headerImage: ReactElement;
   headerBackgroundColor: { dark: string; light: string };
+  headerTitle: string; // Agregamos headerTitle
 }>;
 
 export default function ParallaxScrollView({
   children,
   headerImage,
   headerBackgroundColor,
+  headerTitle, // Recibimos headerTitle
 }: Props) {
   const colorScheme = useColorScheme() ?? 'light';
   const scrollRef = useAnimatedRef<Animated.ScrollView>();
@@ -58,6 +61,10 @@ export default function ParallaxScrollView({
             headerAnimatedStyle,
           ]}>
           {headerImage}
+          {/* Mostrar el headerTitle aquí */}
+          <ThemedView style={styles.headerTitleContainer}>
+            <ThemedText>{headerTitle}</ThemedText> {/* Asegúrate de tener el componente ThemedText disponible */}
+          </ThemedView>
         </Animated.View>
         <ThemedView style={styles.content}>{children}</ThemedView>
       </Animated.ScrollView>
@@ -78,5 +85,10 @@ const styles = StyleSheet.create({
     padding: 32,
     gap: 16,
     overflow: 'hidden',
+  },
+  headerTitleContainer: {
+    position: 'absolute',
+    bottom: 20,  // Puedes ajustar esta posición
+    left: 16,
   },
 });

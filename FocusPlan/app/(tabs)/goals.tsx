@@ -1,4 +1,4 @@
-import { StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, TextInput, TouchableOpacity, Image } from 'react-native';
 import React, { useState } from 'react';
 
 import { ThemedText } from '@/components/ThemedText';
@@ -11,10 +11,15 @@ export default function GoalsScreen() {
   const { goalsList, toggleGoalCompletion, addGoal, deleteGoal } = useAppContext();
   const [newGoalText, setNewGoalText] = useState('');
 
+  // Define una imagen para el encabezado
+  const headerImage = <Image source={require('@/assets/headerImage.jpg')} style={{ width: '100%', height: 250 }} />;
+
   return (
     <ParallaxScrollView
+      headerImage={headerImage}  // Pasamos la imagen al componente ParallaxScrollView
       headerBackgroundColor={{ light: '#E8D3B9', dark: '#4D3B27' }}
-      headerTitle="Objetivos">
+      headerTitle="Objetivos"
+    >
       <ThemedView style={styles.container}>
         <ThemedText type="title">Objetivos</ThemedText>
         <ThemedText>Lista de objetivos diarios</ThemedText>
