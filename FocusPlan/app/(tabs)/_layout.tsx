@@ -28,16 +28,44 @@ export default function TabLayout() {
       }}>
       <Tabs.Screen
         name="index"
-        options={{
-          title: 'Home',
+ckage        options={{
+          title: 'Dashboard',
           tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="calendar"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          title: 'Calendario',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="calendar" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="goals"
+        options={{
+          title: 'Objetivos',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="checklist" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="nutrition"
+        options={{
+          title: 'Nutrición',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="fork.knife" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="workout"
+        options={{
+          title: 'Entrenamiento',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="figure.walk" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="finance"
+        options={{
+          title: 'Finanzas',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="dollarsign" color={color} />,
         }}
       />
     </Tabs>
